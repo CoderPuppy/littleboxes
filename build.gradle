@@ -1,7 +1,7 @@
 apply plugin: 'java'
 
-archivesBaseName = 'littleboxes'
-group = 'cpup.littleboxes'
+archivesBaseName = 'littleBoxes'
+group = 'cpup.littleBoxes'
 version = '0.0.0'
 
 repositories {
