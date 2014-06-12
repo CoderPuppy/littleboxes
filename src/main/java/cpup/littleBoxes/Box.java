@@ -1,13 +1,11 @@
 package cpup.littleBoxes;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class Box {
 	protected int value = -1;
-	protected final List<Integer> littleBoxes = new ArrayList<>();
+	protected final Set<Integer> littleBoxes = new HashSet<>();
 
 	public Box() {}
 
@@ -24,7 +22,7 @@ public class Box {
 		this.value = value;
 	}
 
-	public List<Integer> getLittleBoxes() {
+	public Set<Integer> getLittleBoxes() {
 		return littleBoxes;
 	}
 }
