@@ -4,10 +4,7 @@ import cpup.littleBoxes.Box;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 
 public class BoxGUI extends JComponent {
 	protected final Box box;
@@ -50,6 +47,33 @@ public class BoxGUI extends JComponent {
 				isFocused = false;
 				repaint();
 			}
+		});
+		addKeyListener(new KeyListener() {
+			@Override
+			public void keyTyped(KeyEvent ev) {
+				System.out.printf("key: %s%n", ev.getKeyChar());
+				try {
+					Integer val = Integer.parseInt(Character.toString(ev.getKeyChar()));
+					System.out.printf("num: %d%n", val);
+					if(ev.isShiftDown()) {
+						box.setValue(val);
+						box.getLittleBoxes().clear();
+					} else {
+						if(box.getLittleBoxes().contains(val)) {
+							box.getLittleBoxes().remove(val);
+						} else {
+							box.getLittleBoxes().add(val);
+						}
+					}
+					repaint();
+				} catch(NumberFormatException ex) {}
+			}
+
+			@Override
+			public void keyPressed(KeyEvent keyEvent) {}
+
+			@Override
+			public void keyReleased(KeyEvent keyEvent) {}
 		});
 	}
 
