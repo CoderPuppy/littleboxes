@@ -22,7 +22,7 @@ public class Start {
 //			{ new Box(9), new Box(9), new Box(7), new Box(2), new Box(4), new Box(5), new Box(3), new Box(6), new Box(8) },
 //			{ new Box(8), new Box(1), new Box(2), new Box(3), new Box(9), new Box(4), new Box(6), new Box(7), new Box(5) }
 		});
-		final Set<Integer> littleBoxes = game.getBoxes()[0][0].getLittleBoxes();
+		final Set<Integer> littleBoxes = game.getRawBoxes()[0][0].getLittleBoxes();
 		littleBoxes.add(1);
 		littleBoxes.add(2);
 		littleBoxes.add(3);
